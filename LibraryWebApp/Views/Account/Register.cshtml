@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form id="register">
+    <input type="text" id="user_name" name="user_name" />
+    <input type="password" id="pw" name="pw" />
+</form>
+<input onclick="OnRegister()" type="submit" value="Create">Register
+
+
+@section Scripts{
+    <script src="~/js/user.js" asp-append-version="true"></script>
+}

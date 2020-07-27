@@ -1,0 +1,72 @@
+﻿@model IEnumerable<LibraryWebApp.Domain.Books>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Books</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.book_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_Copies_Actual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_Copies_Current)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publication_year)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book_Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No_Copies_Actual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No_Copies_Current)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publication_year)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
